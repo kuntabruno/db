@@ -57,8 +57,8 @@ let dbConnect = () => {
     return db;
 };
 let startServer = () => {
-    http.listen(Config.server.port, Config.server.host, () => {
-    console.info(`dBMeter service listening on ${Config.server.host}: ${Config.server.port}`);
+    http.listen(process.env.PORT || Config.server.port, Config.server.host, () => {
+    console.info(`dBMeter service listening on ${Config.server.host}: ${process.env.PORT || Config.server.port}`);
 });
 };
 dbConnect();
